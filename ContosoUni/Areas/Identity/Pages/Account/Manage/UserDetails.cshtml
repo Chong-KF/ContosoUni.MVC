@@ -1,0 +1,94 @@
+﻿@page
+@using ContosoUni.Data
+@model ContosoUni.Areas.Identity.Pages.Account.Manage.UserDetailsModel
+@{
+    ViewData["Title"] = "User Details";
+    ViewData["ActivePage"] = ManageNavPages.UserDetails;
+}
+
+<h4>@ViewData["Title"]</h4>
+<partial name="_StatusMessage" model="Model.StatusMessage" />
+<form method="post">
+    <div class="row">
+        <div class="col-md-6 border-right border-secondary">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="UserModel.DisplayName"></label>
+                <input asp-for="UserModel.DisplayName" class="form-control" />
+                <span asp-validation-for="UserModel.DisplayName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.UserID"></label>
+                <input asp-for="UserModel.UserID" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.UserName"></label>
+                <input asp-for="UserModel.UserName" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.Email"></label>
+                <input asp-for="UserModel.Email" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.PhoneNumber"></label>
+                <input asp-for="UserModel.PhoneNumber" class="form-control" />
+                <span asp-validation-for="UserModel.PhoneNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.ExternalLoginProvider"></label>
+                <input asp-for="UserModel.ExternalLoginProvider" class="form-control"  disabled />
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="form-group">
+                <label asp-for="UserModel.LockoutEnd"></label>
+                <input asp-for="UserModel.LockoutEnd" class="form-control" disabled />
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.AccessFailedCount"></label>
+                <input asp-for="UserModel.AccessFailedCount" class="form-control" />
+                <span asp-validation-for="UserModel.AccessFailedCount" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="UserModel.Roles"></label>
+                <div class="card shadow-none bg-light">
+                    <div class="card-body">
+                        @foreach (var r in Enum.GetValues(typeof(MyRoles)))
+                        {
+                            <div>
+                                <label class="form-check-label">
+                                    <input name="UserModel.Roles" value="@r" type="checkbox" @if (Model.UserModel.Roles.Contains(r.ToString())) { <text> checked </text> } />
+                                    <label>@r</label>
+                                </label>
+                            </div>
+                        }
+                    </div>
+                </div>
+            </div>
+            <label class="form-check-label form-check">
+                <input class="form-check-input" asp-for="UserModel.EmailConfirmed" />
+                <label asp-for="UserModel.EmailConfirmed"></label>
+            </label>
+            <label class="form-check-label form-check">
+                <input class="form-check-input" asp-for="UserModel.PhoneNumberConfirmed" />
+                <label asp-for="UserModel.PhoneNumberConfirmed"></label>
+            </label>
+            <label class="form-check-label form-check">
+                <input class="form-check-input" asp-for="UserModel.TwoFactorEnabled" />
+                <label asp-for="UserModel.TwoFactorEnabled"></label>
+            </label>
+            <label class="form-check-label form-check">
+                <input class="form-check-input" asp-for="UserModel.LockoutEnabled" />
+                <label asp-for="UserModel.LockoutEnabled"></label>
+            </label>
+            <label class="form-check-label form-check">
+                <input class="form-check-input" asp-for="UserModel.IsActive" />
+                <label asp-for="UserModel.IsActive"></label>
+            </label>
+        </div>
+    </div>
+    <button type="submit" class="btn btn-primary float-right">Save</button>
+</form>
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

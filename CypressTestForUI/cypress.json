@@ -1,0 +1,7 @@
+{
+  "pageLoadTimeout": 200000,
+  "chromeWebSecurity": false,
+  "trashAssetsBeforeRuns": true,
+  "viewportWidth": 1000,
+  "viewportHeight": 800
+}

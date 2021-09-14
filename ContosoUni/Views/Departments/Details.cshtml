@@ -1,0 +1,61 @@
+﻿@model ContosoUni.ViewModels.DepartmentViewModel
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>@Html.DisplayFor(model => model.DepartmentName)</h1>
+<hr />
+<div class="row">
+    <div class="col-sm-7">
+        <dl class="row">
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.DepartmentName)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.DepartmentName)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.LastUpdatedOn)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.LastUpdatedOn)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.IsDeleted)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.IsDeleted)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.CreatedByUser)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.CreatedByUser.DisplayName)
+            </dd>
+            <dt class="col-sm-3">
+                @Html.DisplayNameFor(model => model.UpdatedByUser)
+            </dt>
+            <dd class="col-sm-9">
+                @Html.DisplayFor(model => model.UpdatedByUser.DisplayName)
+            </dd>
+        </dl>
+    </div>
+    <div class="col-sm-5">
+        <ul class="list-group">
+            <li class="list-group-item active">Subject List</li>
+            @foreach (var item in Model.Subjects)
+            {
+                if (!item.IsDeleted)
+                {
+                    <li class="list-group-item">@Html.DisplayFor(modelItem => item.SubjectName)</li>
+                }
+            }
+        </ul>
+    </div>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.DepartmentID" class="btn btn-primary" role="button">Edit</a>
+    <a asp-action="Index" class="btn btn-secondary" role="button">Back to List</a>
+</div>

@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@*<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>*@
+<div class="container">
+    <div class="jumbotron" style="background-color:lightblue">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-2">
+                    <img src="~/images/logo.png" style="width:140px; height:140px"/>
+                </div>
+                <div class="col-md-10">
+                    <h1 class="display-4">Contoso University</h1>
+                    <h1 class="display-5">Administration System</h1>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-3">
+            <a class="nav-link text-dark card stretched-link text-decoration-none shadow rounded" asp-area="" asp-controller="Departments" asp-action="Index">
+                <img class="card-img-top" src="images/school-icon-png-14053.png" alt="Card image">
+                <div id="scard" class="card-body">
+                    <h4 id="studentCount" class="card-title"></h4>
+                    <p class="card-text">Departments</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-3">
+            <a class="nav-link text-dark card stretched-link text-decoration-none  shadow rounded" asp-area="" asp-controller="Subjects" asp-action="Index">
+                <img class="card-img-top" src="images/courses-icon-15337.png" alt="Card image">
+                <div id="scard" class="card-body">
+                    <h4 id="courseCount" class="card-title"></h4>
+                    <p class="card-text">Subjects</p>
+                </div>
+            </a>
+        </div>
+        <div class="col-sm-6">
+            <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                <h5 class="card-title" id="userWeatherLocationText">Weather in your Location...</h5>
+                <div class="d-flex justify-content-between card-text" id="userWeatherText">
+                    Fetching weather...
+                </div>
+            </div>
+            <div class="card-body shadow p-3 mb-5 bg-white rounded">
+                <p class="card-text" id="userDistanceText">Waiting to detect Location data...</p>
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+    <!--for wearther-->
+    <script src="js/location.js"></script>
+    <script src="js/weather.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.27.0/moment.min.js"></script>
+}
