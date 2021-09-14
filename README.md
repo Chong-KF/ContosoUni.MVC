@@ -14,7 +14,7 @@ Demo of .Net MVC, Identity and unit testing
 * Swagger API Documentation
 
 ## ScreenShoot
-![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/homepage.png)
+![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/screenshots.gif)
 
 ## Identity
-![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/identity01.png)
+![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/identity.gif)
