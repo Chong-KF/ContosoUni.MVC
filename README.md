@@ -13,4 +13,4 @@ Demo of .Net MVC, Identity and unit testing
 * Xunit Test, MSunit Test
 
 ## ScreenShoot
-![]()
+![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/homepage.png?raw=true)
