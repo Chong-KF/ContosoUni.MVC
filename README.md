@@ -1,6 +1,6 @@
 # ContosoUni.MVC
 
-my capstone project for SGUnited full stack course.
+My capstone 6 project for SGUnited full stack course.
 Demo of .Net MVC, Identity and unit testing
 
 ## Tech/framework used
