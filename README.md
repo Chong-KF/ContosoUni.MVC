@@ -11,6 +11,10 @@ Demo of .Net MVC, Identity and unit testing
 * Azure Queue Storage + Queue Trigger + SendGrid
 * Cypress UI Testing
 * Xunit Test, MSunit Test
+* Swagger API Documentation
 
 ## ScreenShoot
-![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/homepage.png?raw=true)
+![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/homepage.png)
+
+## Identity
+![](https://github.com/Chong-KF/ContosoUni.MVC/blob/master/Images/identity01.png)
